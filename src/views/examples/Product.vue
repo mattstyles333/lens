@@ -38,7 +38,7 @@
                 ref="tabs"
               >
                 <!-- here you can add your content for tab-content -->
-                <template slot="tab-pane-1">
+                <template slot="tab-pane-1" >
                   <div class="md-layout">
                     <div
                       class="md-layout-item md-size-33 md-small-size-100 md-large-size-33"
@@ -484,7 +484,7 @@ export default {
       amount: 100 / 6,
       selectColor: "red",
       selectSize: "small",
-      image: require("@/assets/img/examples/bg-product.jpg"),
+      image: require("@/assets/img/lens/background2.jpeg"),
 
       lensImages: {
         normal_size: [
@@ -533,6 +533,9 @@ export default {
 };
 </script>
 <style lang="scss">
+.disabledTab{
+      pointer-events: none;
+  }
 .nav-tabs {
   justify-content: center !important;
 }

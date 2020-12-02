@@ -60,7 +60,7 @@ export default new Router({
         footer: MainFooter
       },
       props: {
-        header: { colorOnScroll: 400, navbarTransparent: true }
+        header: { colorOnScroll: 0, navbarTransparent: false, type: "dark" }
       }
     },
     {
