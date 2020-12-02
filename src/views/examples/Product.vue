@@ -17,35 +17,236 @@
     <div class="section">
       <div class="container">
         <div class="main main-raised">
-          <nav-tabs-card no-label tabs-plain>
-            <template slot="content">
-              <md-tabs class="md-primary" md-alignment="centered">
-                <md-tab id="tab-home" md-label="Usage" md-icon="face">
+          <div class="md-layout">
+            <div class="md-layout-item md-size-100 md-medium-size-100">
+              <div class="title text-center">
+                <h1>Lens Configurator</h1>
+              </div>
+              <md-progress-bar class="md-primary" :md-value="amount" />
+              <tabs
+                :tab-active="1"
+                :tab-name="[
+                  'Frame Type',
+                  'Usage',
+                  'Lens',
+                  'Color',
+                  'Prescription',
+                  'Shipping',
+                ]"
+                plain
+                color-button="rose"
+                ref="tabs"
+              >
+                <!-- here you can add your content for tab-content -->
+                <template slot="tab-pane-1">
+                  <div class="md-layout">
+                    <div
+                      class="md-layout-item md-size-33 md-small-size-100 md-large-size-33"
+                    >
+                      <pricing-card card-plain>
+                        <template slot="cardContent">
+                          <h6 class="card-category text-gray">Full Rimmed</h6>
+                          <div class="icon">
+                            <i class="material-icons">weekend</i>
+                          </div>
+                          <h3 class="card-title">Free</h3>
+                          <p class="card-description">
+                            This is good if your company size is between 2 and
+                            10 Persons.
+                          </p>
+                          <md-button
+                            href="javascript:void(0)"
+                            class="md-white md-round"
+                          >
+                            Choose Plan
+                          </md-button>
+                        </template>
+                      </pricing-card>
+                    </div>
+                    <div
+                      class="md-layout-item md-size-33 md-small-size-100 md-large-size-33"
+                    >
+                      <pricing-card>
+                        <template slot="cardContent">
+                          <h6 class="card-category text-gray">Semi Rimless</h6>
+                          <div class="icon icon-rose">
+                            <i class="material-icons">people</i>
+                          </div>
+                          <h3 class="card-title">$29</h3>
+                          <p class="card-description">
+                            This is good if your company size is between 2 and
+                            10 Persons.
+                          </p>
+                          <md-button
+                            href="javascript:void(0)"
+                            class="md-rose md-round"
+                          >
+                            Choose Plan
+                          </md-button>
+                        </template>
+                      </pricing-card>
+                    </div>
+                    <div
+                      class="md-layout-item md-size-33 md-small-size-100 md-large-size-33"
+                    >
+                      <pricing-card card-plain>
+                        <template slot="cardContent">
+                          <h6 class="card-category text-gray">
+                            Rimless
+                          </h6>
+                          <div class="icon">
+                            <i class="material-icons">business</i>
+                          </div>
+                          <h3 class="card-title">$69</h3>
+                          <p class="card-description">
+                            This is good if your company size is between 11 and
+                            99 Persons.
+                          </p>
+                          <md-button
+                            href="javascript:void(0)"
+                            class="md-white md-round"
+                          >
+                            Choose Plan
+                          </md-button>
+                        </template>
+                      </pricing-card>
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <md-button
+                      class="md-success md-round md-lg"
+                      @click="
+                        incrementSlider();
+                        $refs.tabs.switchPanel('Usage');
+                      "
+                    >
+                      Next
+                    </md-button>
+                  </div>
+                </template>
+                <template slot="tab-pane-2">
+                  <div class="md-layout">
+                    <div class="md-layout-item md-size-20 md-small-size-100">
+                      <blog-card
+                        card-plain
+                        :shadow-normal="false"
+                        :no-colored-shadow="false"
+                        :card-image="cardBlogPost.cardBlogPost1"
+                      >
+                        <template slot="cardContent">
+                          <h6 class="card-category text-info">Standard</h6>
+                          <h4 class="card-title">No Prescription</h4>
+                          <p class="card-description">
+                            Standard no prescription sunglass or clear glasses
+                            lens
+                          </p>
+                        </template>
+                      </blog-card>
+                    </div>
+                    <div class="md-layout-item md-size-20 md-small-size-100">
+                      <blog-card
+                        card-plain
+                        :shadow-normal="false"
+                        :no-colored-shadow="false"
+                        :card-image="cardBlogPost2.cardBlogPost1"
+                      >
+                        <template slot="cardContent">
+                          <h6 class="card-category text-info">Standard</h6>
+                          <h4 class="card-title">Distance</h4>
+                          <p class="card-description">
+                            Like so many organizations these days, Autodesk is a
+                            company in transition. It was until recently a
+                            traditional boxed software company selling licenses.
+                            <a href="javascript:void(0)"> Read More </a>
+                          </p>
+                        </template>
+                      </blog-card>
+                    </div>
+                    <div class="md-layout-item md-size-20 md-small-size-100">
+                      <blog-card
+                        card-plain
+                        :shadow-normal="false"
+                        :no-colored-shadow="false"
+                        :card-image="cardBlogPost2.cardBlogPost1"
+                      >
+                        <template slot="cardContent">
+                          <h6 class="card-category text-info">Standard</h6>
+                          <h4 class="card-title">Reading</h4>
+                          <p class="card-description">
+                            Like so many organizations these days, Autodesk is a
+                            company in transition. It was until recently a
+                            traditional boxed software company selling licenses.
+                            <a href="javascript:void(0)"> Read More </a>
+                          </p>
+                        </template>
+                      </blog-card>
+                    </div>
+                    <div class="md-layout-item md-size-20 md-small-size-100">
+                      <blog-card
+                        card-plain
+                        :shadow-normal="false"
+                        :no-colored-shadow="false"
+                        :card-image="cardBlogPost2.cardBlogPost2"
+                      >
+                        <template slot="cardContent">
+                          <h6 class="card-category text-danger">Advanced</h6>
+                          <h4 class="card-title">Bifocals</h4>
+                          <p class="card-description">
+                            Like so many organizations these days, Autodesk is a
+                            company in transition. It was until recently a
+                            traditional boxed software company selling licenses.
+                            <a href="javascript:void(0)"> Read More </a>
+                          </p>
+                        </template>
+                      </blog-card>
+                      Pick the best plan for you
+                    </div>
+                    <div class="md-layout-item md-size-20 md-small-size-100">
+                      <blog-card
+                        card-plain
+                        :shadow-normal="false"
+                        :no-colored-shadow="false"
+                        :card-image="cardBlogPost2.cardBlogPost2"
+                      >
+                        <template slot="cardContent">
+                          <h6 class="card-category text-danger">Advanced</h6>
+                          <h4 class="card-title">Progressive / Varifocals</h4>
+                          <p class="card-description">
+                            Like so many organizations these days, Autodesk is a
+                            company in transition. It was until recently a
+                            traditional boxed software company selling licenses.
+                            <a href="javascript:void(0)"> Read More </a>
+                          </p>
+                        </template>
+                      </blog-card>
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <md-button
+                      class="md-success md-round md-lg"
+                      @click="
+                        incrementSlider();
+                        $refs.tabs.switchPanel('Lens');
+                      "
+                    >
+                      Next
+                    </md-button>
+                  </div>
+                </template>
+                <template slot="tab-pane-3">
                   <div class="md-layout">
                     <div class="md-layout-item md-size-50 md-small-size-100">
                       <ProductZoomer
-                        :base-images="images"
+                        :base-images="lensImages"
                         :base-zoomer-options="zoomerOptions"
                       />
                     </div>
-                    <div class="md-layout-item md-size-50 md-small-size-100 text-left">
+                    <div
+                      class="md-layout-item md-size-50 md-small-size-100 text-left"
+                    >
                       <br />
 
                       <div class="md-layout pick-size">
-                        <div
-                          class="md-layout-item md-size-50 md-small-size-100"
-                        >
-                          <label>Select Lens Type</label>
-                          <md-field>
-                            <md-select id="selectType" name="selectType">
-                              <md-option value="distance"> Distance </md-option>
-                              <md-option value="reading"> Reading </md-option>
-                              <md-option value="varifocal">
-                                Varifocal/Progressive
-                              </md-option>
-                            </md-select>
-                          </md-field>
-                        </div>
                         <div
                           class="md-layout-item md-size-50 md-small-size-100"
                         >
@@ -88,7 +289,34 @@
                             </md-select>
                           </md-field>
                         </div>
-
+                      </div>
+                      <div class="text-right">
+                        <md-button
+                          class="md-success md-round md-lg"
+                          @click="
+                            incrementSlider();
+                            $refs.tabs.switchPanel('Color');
+                          "
+                        >
+                          Next
+                        </md-button>
+                      </div>
+                    </div>
+                  </div>
+                </template>
+                <template slot="tab-pane-4">
+                  <div class="md-layout">
+                    <div class="md-layout-item md-size-50 md-small-size-100">
+                      <ProductZoomer
+                        :base-images="lensImages"
+                        :base-zoomer-options="zoomerOptions"
+                      />
+                    </div>
+                    <div
+                      class="md-layout-item md-size-50 md-small-size-100 text-left"
+                    >
+                      <div class="md-layout">
+                        <h3>Select Color</h3>
                         <div class="md-layout-item md-size-100">
                           <md-button class="md-success md-just-icon md-round">
                             <md-icon></md-icon>
@@ -121,58 +349,57 @@
                         </div>
                       </div>
                       <div class="text-right">
-                        <md-button class="md-success md-round md-lg">
+                        <md-button
+                          class="md-success md-round md-lg"
+                          @click="
+                            incrementSlider();
+                            $refs.tabs.switchPanel('Prescription');
+                          "
+                        >
                           Next
                         </md-button>
                       </div>
                     </div>
                   </div>
-                </md-tab>
-
-                <md-tab id="tab-lens" md-label="Lens" md-icon="chat">
-                  <p>
-                    I think that’s a responsibility that I have, to push
-                    possibilities, to show people, this is the level that things
-                    could be at. I will be the leader of a company that ends up
-                    being worth billions of dollars, because I got the answers.
-                    I understand culture. I am the nucleus. I think that’s a
-                    responsibility that I have, to push possibilities, to show
-                    people, this is the level that things could be at.
-                  </p>
-                </md-tab>
-                <md-tab id="tab-color" md-label="Color" md-icon="chat">
-                  <p>
-                    I think that’s a responsibility that I have, to push
-                    possibilities, to show people, this is the level that things
-                    could be at. I will be the leader of a company that ends up
-                    being worth billions of dollars, because I got the answers.
-                    I understand culture. I am the nucleus. I think that’s a
-                    responsibility that I have, to push possibilities, to show
-                    people, this is the level that things could be at.
-                  </p>
-                </md-tab>
-                <md-tab id="tab-posts" md-label="Prescription" md-icon="build">
-                  <p>
-                    I think that’s a responsibility that I have, to push
-                    possibilities, to show people, this is the level that things
-                    could be at. So when you get something that has the name
-                    Kanye West on it, it’s supposed to be pushing the furthest
-                    possibilities. I will be the leader of a company that ends
-                    up being worth billions of dollars, because I got the
-                    answers. I understand culture. I am the nucleus.
-                  </p>
+                </template>
+                <template slot="tab-pane-5">
+                  Completely synergize resource taxing relationships via premier
+                  niche markets. Professionally cultivate one-to-one customer
+                  service with robust ideas.
+                  <br /><br />
+                  Dynamically innovate resource-leveling customer service for
+                  state of the art customer service.
                   <div class="text-right">
-                        <md-button class="md-success md-round">
-                          Add To Cart <md-icon>shopping_cart</md-icon>
-                        </md-button>
-                      </div>
-                </md-tab>
-              </md-tabs>
-            </template>
-          </nav-tabs-card>
-
-          <br />
-          <md-progress-bar class="md-primary" :md-value="amount" />
+                    <md-button
+                      class="md-success md-round md-lg"
+                      @click="
+                        incrementSlider();
+                        $refs.tabs.switchPanel('Shipping');
+                      "
+                    >
+                      Next
+                    </md-button>
+                  </div>
+                </template>
+                <template slot="tab-pane-6">
+                  Completely synergize resource taxing relationships via premier
+                  niche markets. Professionally cultivate one-to-one customer
+                  service with robust ideas.
+                  <br /><br />
+                  Dynamically innovate resource-leveling customer service for
+                  state of the art customer service.
+                  <div class="text-right">
+                    <md-button
+                      class="md-success md-round md-lg"
+                      @click="incrementSlider"
+                    >
+                      Next
+                    </md-button>
+                  </div>
+                </template>
+              </tabs>
+            </div>
+          </div>
         </div>
         <div class="features text-center">
           <div class="md-layout">
@@ -217,27 +444,49 @@
 
 
 <script>
-import { InfoAreas } from "@/components";
 import Mixins from "@/plugins/basicMixins";
-import { NavTabsCard } from "@/components";
+
+import {
+  BlogCard,
+  FullBgCard,
+  PricingCard,
+  Tabs,
+  InfoAreas,
+} from "@/components";
+
 export default {
   components: {
     InfoAreas,
-    NavTabsCard,
+    Tabs,
+    BlogCard,
+    PricingCard,
   },
   mixins: [Mixins.HeaderImage],
   bodyClass: "product-page",
+
   data() {
     return {
+      cardBlogPost: {
+        cardBlogPost1: require("@/assets/img/examples/card-blog4.jpg"),
+        cardBlogPost2: require("@/assets/img/office2.jpg"),
+      },
+      cardBlogPost2: {
+        cardBlogPost1: require("@/assets/img/examples/blog5.jpg"),
+        cardBlogPost2: require("@/assets/img/examples/blog7.jpg"),
+      },
+      cardBlogPost3: {
+        cardBlogPost1: require("@/assets/img/examples/blog8.jpg"),
+      },
+
       radio1: true,
       checkbox1: null,
       switch1: false,
-      amount: 30,
+      amount: 100 / 6,
       selectColor: "red",
       selectSize: "small",
       image: require("@/assets/img/examples/bg-product.jpg"),
 
-      images: {
+      lensImages: {
         normal_size: [
           {
             id: 1,
@@ -276,9 +525,17 @@ export default {
       },
     };
   },
+  methods: {
+    incrementSlider: function () {
+      this.amount += 100 / 6;
+    },
+  },
 };
 </script>
 <style lang="scss">
+.nav-tabs {
+  justify-content: center !important;
+}
 .inline-container-zoomer-box {
   .preview-box {
     text-align: center;
