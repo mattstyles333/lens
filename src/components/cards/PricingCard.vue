@@ -3,7 +3,8 @@
     class="md-card-pricing"
     :class="{
       [cardColor]: true,
-      'md-card-plain': cardPlain
+      'md-card-plain': cardPlain,
+      'clicked': clicked
     }"
     :style="bgFullCards(cardImage)"
   >
@@ -23,7 +24,8 @@ export default {
   props: {
     cardPlain: Boolean,
     cardBg: String,
-    cardImage: String
+    cardImage: String,
+    clicked: Boolean
   },
   computed: {
     cardColor() {
@@ -42,4 +44,6 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+
+</style>

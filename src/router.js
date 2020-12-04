@@ -25,7 +25,7 @@ import MainNavbar from "./layout/MainNavbar.vue";
 import MainFooter from "./layout/MainFooter.vue";
 
 
-import Wizard from "./views/dash/Wizard.vue";
+import Hp from "./views/Hp.vue";
 
 Vue.use(Router);
 
@@ -40,15 +40,15 @@ export default new Router({
       }
     },
     {
-      path: "/test",
-      name: "test",
+      path: "/hp",
+      name: "hp",
       components: {
-        default: Wizard,
+        default: Hp,
         header: MainNavbar,
         footer: MainFooter
       },
       props: {
-        header: { colorOnScroll: 400, navbarTransparent: true }
+        header: { colorOnScroll: 400, navbarTransparent: true, type: "dark" }
       }
     },
     {
@@ -60,7 +60,7 @@ export default new Router({
         footer: MainFooter
       },
       props: {
-        header: { colorOnScroll: 0, navbarTransparent: false, type: "dark" }
+        header: { colorOnScroll: 400, navbarTransparent: true, type: "dark" }
       }
     },
     {

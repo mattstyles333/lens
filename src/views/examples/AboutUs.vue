@@ -14,8 +14,7 @@
               About Us
             </h1>
             <h4>
-              Meet the amazing team behind this project and find out more about
-              how we work.
+              Need about us content
             </h4>
           </div>
         </div>
@@ -367,67 +366,7 @@
           </div>
         </div>
       </div>
-      <div class="section section-about-office">
-        <div class="container">
-          <div class="md-layout text-center">
-            <div class="md-layout-item md-size-66 md-small-size-100 mx-auto">
-              <h2 class="title">
-                Want to work with us?
-              </h2>
-              <h4 class="description">
-                Divide details about your product or agency work into parts.
-                Write a few lines about each one and contact us about any
-                further collaboration. We will get back to you in a couple of
-                hours.
-              </h4>
-            </div>
-            <div class="md-layout-item md-size-66 md-small-size-100 mx-auto">
-              <div class="md-layout">
-                <div class="md-layout-item md-size-33 md-small-size-100">
-                  <md-field>
-                    <label>Your name</label>
-                    <md-input v-model="name" />
-                  </md-field>
-                </div>
-                <div class="md-layout-item md-size-33 md-small-size-100">
-                  <md-field>
-                    <label>Your email</label>
-                    <md-input v-model="email" />
-                  </md-field>
-                </div>
-                <div class="md-layout-item md-size-33 md-small-size-100">
-                  <md-field>
-                    <label for="movie">Speciality</label>
-                    <md-select
-                      id="speciality"
-                      v-model="speciality"
-                      name="speciality"
-                    >
-                      <md-option value="fight-club">
-                        I'm Designer
-                      </md-option>
-                      <md-option value="godfather">
-                        I'm Developer
-                      </md-option>
-                      <md-option value="godfather-ii">
-                        I'm a Hero
-                      </md-option>
-                    </md-select>
-                  </md-field>
-                </div>
-                <div class="md-layout-item md-size-100 text-center">
-                  <md-button
-                    href="javascript:void(0)"
-                    class="md-primary md-round mt-2"
-                  >
-                    Let's Talk
-                  </md-button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      
     </div>
   </div>
 </template>
@@ -448,7 +387,7 @@ export default {
       speciality: "",
       name: null,
       email: null,
-      image: require("@/assets/img/bg9.jpg"),
+      image: require("@/assets/img/lens/background.jpeg"),
       aboutTeam: {
         aboutTeam1: require("@/assets/img/faces/marc.jpg"),
         aboutTeam2: require("@/assets/img/faces/kendall.jpg"),

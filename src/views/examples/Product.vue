@@ -38,12 +38,45 @@
                 ref="tabs"
               >
                 <!-- here you can add your content for tab-content -->
-                <template slot="tab-pane-1" >
+                <template slot="tab-pane-1">
                   <div class="md-layout">
                     <div
-                      class="md-layout-item md-size-33 md-small-size-100 md-large-size-33"
+                      class="md-layout-item md-size-100 md-small-size-100 md-large-size-100"
                     >
-                      <pricing-card card-plain>
+                    <tabs
+            :tab-active="1"
+            :tab-name="['Full Rimmed', 'Semi Rimless', 'Rimless']"
+            :tab-icon="['dashboard', 'schedule', 'list']"
+            plain
+            nav-pills-icons
+            color-button="primary"
+          >
+            <!-- here you can add your content for tab-content -->
+            <template slot="tab-pane-1">
+              Collaboratively administrate empowered markets via plug-and-play
+              networks. Dynamically procrastinate B2C users after installed base
+              benefits.
+              <br><br>
+              Dramatically visualize customer directed convergence without
+              revolutionary ROI.
+            </template>
+            <template slot="tab-pane-2">
+              Efficiently unleash cross-media information without cross-media
+              value. Quickly maximize timely deliverables for real-time schemas.
+              <br><br>
+              Dramatically maintain clicks-and-mortar solutions without
+              functional solutions.
+            </template>
+            <template slot="tab-pane-3">
+              Completely synergize resource taxing relationships via premier
+              niche markets. Professionally cultivate one-to-one customer
+              service with robust ideas.
+              <br><br>
+              Dynamically innovate resource-leveling customer service for state
+              of the art customer service.
+            </template>
+          </tabs>
+                      <pricing-card  class="frame-card">
                         <template slot="cardContent">
                           <h6 class="card-category text-gray">Full Rimmed</h6>
                           <div class="icon">
@@ -54,22 +87,16 @@
                             This is good if your company size is between 2 and
                             10 Persons.
                           </p>
-                          <md-button
-                            href="javascript:void(0)"
-                            class="md-white md-round"
-                          >
-                            Choose Plan
-                          </md-button>
                         </template>
                       </pricing-card>
                     </div>
                     <div
                       class="md-layout-item md-size-33 md-small-size-100 md-large-size-33"
                     >
-                      <pricing-card>
+                      <pricing-card class="frame-card">
                         <template slot="cardContent">
                           <h6 class="card-category text-gray">Semi Rimless</h6>
-                          <div class="icon icon-rose">
+                          <div class="icon">
                             <i class="material-icons">people</i>
                           </div>
                           <h3 class="card-title">$29</h3>
@@ -77,19 +104,13 @@
                             This is good if your company size is between 2 and
                             10 Persons.
                           </p>
-                          <md-button
-                            href="javascript:void(0)"
-                            class="md-rose md-round"
-                          >
-                            Choose Plan
-                          </md-button>
                         </template>
                       </pricing-card>
                     </div>
                     <div
                       class="md-layout-item md-size-33 md-small-size-100 md-large-size-33"
                     >
-                      <pricing-card card-plain>
+                      <pricing-card class="frame-card">
                         <template slot="cardContent">
                           <h6 class="card-category text-gray">
                             Rimless
@@ -102,12 +123,6 @@
                             This is good if your company size is between 11 and
                             99 Persons.
                           </p>
-                          <md-button
-                            href="javascript:void(0)"
-                            class="md-white md-round"
-                          >
-                            Choose Plan
-                          </md-button>
                         </template>
                       </pricing-card>
                     </div>
@@ -128,6 +143,7 @@
                   <div class="md-layout">
                     <div class="md-layout-item md-size-20 md-small-size-100">
                       <blog-card
+                        class="frame-card"
                         card-plain
                         :shadow-normal="false"
                         :no-colored-shadow="false"
@@ -145,6 +161,7 @@
                     </div>
                     <div class="md-layout-item md-size-20 md-small-size-100">
                       <blog-card
+                      class="frame-card"
                         card-plain
                         :shadow-normal="false"
                         :no-colored-shadow="false"
@@ -153,17 +170,13 @@
                         <template slot="cardContent">
                           <h6 class="card-category text-info">Standard</h6>
                           <h4 class="card-title">Distance</h4>
-                          <p class="card-description">
-                            Like so many organizations these days, Autodesk is a
-                            company in transition. It was until recently a
-                            traditional boxed software company selling licenses.
-                            <a href="javascript:void(0)"> Read More </a>
-                          </p>
+                          <p class="card-description"></p>
                         </template>
                       </blog-card>
                     </div>
                     <div class="md-layout-item md-size-20 md-small-size-100">
                       <blog-card
+                      class="frame-card"
                         card-plain
                         :shadow-normal="false"
                         :no-colored-shadow="false"
@@ -172,17 +185,13 @@
                         <template slot="cardContent">
                           <h6 class="card-category text-info">Standard</h6>
                           <h4 class="card-title">Reading</h4>
-                          <p class="card-description">
-                            Like so many organizations these days, Autodesk is a
-                            company in transition. It was until recently a
-                            traditional boxed software company selling licenses.
-                            <a href="javascript:void(0)"> Read More </a>
-                          </p>
+                          <p class="card-description"></p>
                         </template>
                       </blog-card>
                     </div>
                     <div class="md-layout-item md-size-20 md-small-size-100">
                       <blog-card
+                      class="frame-card"
                         card-plain
                         :shadow-normal="false"
                         :no-colored-shadow="false"
@@ -191,18 +200,13 @@
                         <template slot="cardContent">
                           <h6 class="card-category text-danger">Advanced</h6>
                           <h4 class="card-title">Bifocals</h4>
-                          <p class="card-description">
-                            Like so many organizations these days, Autodesk is a
-                            company in transition. It was until recently a
-                            traditional boxed software company selling licenses.
-                            <a href="javascript:void(0)"> Read More </a>
-                          </p>
+                          <p class="card-description"></p>
                         </template>
                       </blog-card>
-                      Pick the best plan for you
                     </div>
                     <div class="md-layout-item md-size-20 md-small-size-100">
                       <blog-card
+                      class="frame-card"
                         card-plain
                         :shadow-normal="false"
                         :no-colored-shadow="false"
@@ -211,12 +215,7 @@
                         <template slot="cardContent">
                           <h6 class="card-category text-danger">Advanced</h6>
                           <h4 class="card-title">Progressive / Varifocals</h4>
-                          <p class="card-description">
-                            Like so many organizations these days, Autodesk is a
-                            company in transition. It was until recently a
-                            traditional boxed software company selling licenses.
-                            <a href="javascript:void(0)"> Read More </a>
-                          </p>
+                          <p class="card-description"></p>
                         </template>
                       </blog-card>
                     </div>
@@ -440,9 +439,6 @@
   </div>
 </template>
 
-
-
-
 <script>
 import Mixins from "@/plugins/basicMixins";
 
@@ -526,16 +522,27 @@ export default {
     };
   },
   methods: {
-    incrementSlider: function () {
+    incrementSlider: function() {
       this.amount += 100 / 6;
     },
   },
 };
 </script>
 <style lang="scss">
-.disabledTab{
-      pointer-events: none;
+  .frame-card {
+  box-shadow: none !important;
+      .clicked {
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12) !important;
+    } 
   }
+  .frame-card:hover {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12) !important;
+
+  }
+
+.disabledTab {
+  pointer-events: none;
+}
 .nav-tabs {
   justify-content: center !important;
 }

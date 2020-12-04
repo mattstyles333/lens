@@ -6,15 +6,20 @@
     :class="{
       [`md-${type}`]: !navbarTransparent,
       [extraNavClasses]: navbarTransparent,
-      'md-transparent': navbarTransparent
+      'md-transparent': navbarTransparent,
     }"
     :color-on-scroll="colorOnScroll"
   >
     <div class="md-toolbar-row md-collapse-lateral">
       <div class="md-toolbar-section-start">
-        <h3 class="md-title">
-          {{ brand }}
-        </h3>
+        <md-button
+          class="md-button md-button md-button-link md-white md-simple md-theme-default"
+          @click="$router.push('Hp')"
+        >
+          <h3 class="md-title">
+            {{ brand }}
+          </h3>
+        </md-button>
       </div>
       <div class="md-toolbar-section-end">
         <md-button
@@ -33,156 +38,10 @@
               <!-- Here you can add your items from the section-start of your toolbar -->
             </mobile-menu>
             <md-list>
-              <li
-                v-if="showDownload"
-                class="md-list-item"
-              >
-                <a
-                  href="javascript:void(0)"
-                  class="md-list-item-router md-list-item-container md-button-clean dropdown"
-                >
-                  <div class="md-list-item-content">
-                    <drop-down direction="down">
-                      <md-button
-                        slot="title"
-                        class="md-button md-button-link md-white md-simple dropdown-toggle"
-                        data-toggle="dropdown"
-                      >
-                        <i class="material-icons">apps</i>
-                        <p>Components</p>
-                      </md-button>
-                      <ul class="dropdown-menu dropdown-with-icons">
-                        <li>
-                          <a href="#/presentation">
-                            <i class="material-icons">layers</i>
-                            Presentation
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#/">
-                            <i class="material-icons">line_style</i>
-                            All Components
-                          </a>
-                        </li>
-                        <li>
-                          <a :href="docs_link">
-                            <i class="material-icons">content_paste</i>
-                            Documentation
-                          </a>
-                        </li>
-                      </ul>
-                    </drop-down>
-                  </div>
-                </a>
-              </li>
-              <li
-                v-if="!showDownload"
-                class="md-list-item"
-              >
-                <a
-                  href="javascript:void(0)"
-                  class="md-list-item-router md-list-item-container md-button-clean dropdown"
-                >
-                  <div class="md-list-item-content">
-                    <drop-down direction="down">
-                      <md-button
-                        slot="title"
-                        class="md-button md-button-link md-white md-simple dropdown-toggle"
-                        data-toggle="dropdown"
-                      >
-                        <i class="material-icons">apps</i>
-                        <p>Components</p>
-                      </md-button>
-                      <ul class="dropdown-menu dropdown-with-icons">
-                        <li>
-                          <a href="#/presentation">
-                            <i class="material-icons">layers</i>
-                            Presentation
-                          </a>
-                        </li>
-                        <li>
-                          <a :href="docs_link">
-                            <i class="material-icons">content_paste</i>
-                            Documentation
-                          </a>
-                        </li>
-                      </ul>
-                    </drop-down>
-                  </div>
-                </a>
-              </li>
+              
+              
 
-              <li class="md-list-item">
-                <a
-                  href="javascript:void(0)"
-                  class="md-list-item-router md-list-item-container md-button-clean dropdown"
-                >
-                  <div class="md-list-item-content">
-                    <drop-down direction="down">
-                      <md-button
-                        slot="title"
-                        class="md-button md-button-link md-white md-simple dropdown-toggle"
-                        data-toggle="dropdown"
-                      >
-                        <i class="material-icons">view_day</i>
-                        <p>Sections</p>
-                      </md-button>
-                      <ul class="dropdown-menu dropdown-with-icons">
-                        <li
-                          v-for="li in linksSections"
-                          :key="li.name"
-                        >
-                          <a
-                            :href="'#/sections#' + li.name"
-                            @click="
-                              () => {
-                                NavbarStore.showNavbar = false;
-                                toggledClass = false;
-                              }
-                            "
-                          >
-                            <i class="material-icons">{{ li.icon }}</i>
-                            {{
-                              li.name.charAt(0).toUpperCase() + li.name.slice(1)
-                            }}
-                          </a>
-                        </li>
-                      </ul>
-                    </drop-down>
-                  </div>
-                </a>
-              </li>
-
-              <li class="md-list-item">
-                <a
-                  href="javascript:void(0)"
-                  class="md-list-item-router md-list-item-container md-button-clean dropdown"
-                >
-                  <div class="md-list-item-content">
-                    <drop-down direction="down">
-                      <md-button
-                        slot="title"
-                        class="md-button md-button-link md-white md-simple dropdown-toggle"
-                        data-toggle="dropdown"
-                      >
-                        <i class="material-icons">view_carousel</i>
-                        <p>Examples</p>
-                      </md-button>
-                      <ul class="dropdown-menu dropdown-with-icons">
-                        <li
-                          v-for="li in linksExamples"
-                          :key="li.name"
-                        >
-                          <a :href="'#/' + li.href">
-                            <i class="material-icons">{{ li.icon }}</i>
-                            {{ li.name }}
-                          </a>
-                        </li>
-                      </ul>
-                    </drop-down>
-                  </div>
-                </a>
-              </li>
+              
 
               <li class="md-list-item">
                 <a
@@ -191,8 +50,39 @@
                 >
                   <div class="md-list-item-content">
                     <md-button
+                      @click="$router.push('about-us')"
+                      class="md-button md-button md-button-link md-white md-simple md-theme-default"
+                      ><md-icon>info</md-icon>About Us</md-button
+                    >
+                  </div>
+                </a>
+              </li>
+              <li class="md-list-item">
+                <a
+                  href="javascript:void(0)"
+                  class="md-list-item-router md-list-item-container md-button-clean"
+                >
+                  <div class="md-list-item-content">
+                    <md-button
+                      @click="$router.push('product-page')"
                       class="md-success md-round"
-                    ><md-icon>shopping_cart</md-icon>Buy now</md-button>
+                      ><md-icon>edit</md-icon>Cusotmize Lens</md-button
+                    >
+                  </div>
+                </a>
+              </li>
+              <li class="md-list-item">
+                <a
+                  href="javascript:void(0)"
+                  class="md-list-item-router md-list-item-container md-button-clean"
+                >
+                  <div class="md-list-item-content">
+                    <md-button
+                      @click="$router.push('shopping-cart')"
+                      class="md-button md-button md-button-link md-white md-simple md-theme-default"
+                      ><md-icon>shopping_basket</md-icon>Shopping
+                      Cart</md-button
+                    >
                   </div>
                 </a>
               </li>
@@ -221,7 +111,7 @@ function resizeThrottler(actualResizeHandler) {
 import MobileMenu from "@/layout/MobileMenu";
 export default {
   components: {
-    MobileMenu
+    MobileMenu,
   },
   props: {
     type: {
@@ -236,26 +126,25 @@ export default {
           "success",
           "warning",
           "info",
-          "dark"
+          "dark",
         ].includes(value);
-      }
+      },
     },
     colorOnScroll: {
       type: Number,
-      default: 0
+      default: 0,
     },
     navbarTransparent: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   data() {
     return {
-      docs_link:
-        "https://demos.creative-tim.com/vue-material-kit-pro/documentation/",
+
       extraNavClasses: "",
       toggledClass: false,
-      brand: "Vue Material Kit PRO",
+      brand: "HOMEPAGE link",
       linksSections: [
         { name: "headers", icon: "dns" },
         { name: "features", icon: "build" },
@@ -264,7 +153,7 @@ export default {
         { name: "projects", icon: "assignment" },
         { name: "pricing", icon: "monetization_on" },
         { name: "testimonials", icon: "chat" },
-        { name: "contacts", icon: "call" }
+        { name: "contacts", icon: "call" },
       ],
       linksExamples: [
         { name: "About Us", href: "about-us", icon: "account_balance" },
@@ -277,21 +166,21 @@ export default {
         {
           name: "Shopping Cart",
           href: "shopping-cart",
-          icon: "shopping_basket"
+          icon: "shopping_basket",
         },
         { name: "Ecommerce Page", href: "ecommerce-page", icon: "store" },
         { name: "Product Page", href: "product-page", icon: "shopping_cart" },
         { name: "Profile Page", href: "profile-page", icon: "account_circle" },
         { name: "Signup Page", href: "signup-page", icon: "person_add" },
-        { name: "Error Page", href: "error-page", icon: "error" }
-      ]
+        { name: "Error Page", href: "error-page", icon: "error" },
+      ],
     };
   },
   computed: {
     showDownload() {
       const excludedRoutes = ["index"];
-      return excludedRoutes.every(r => r !== this.$route.name);
-    }
+      return excludedRoutes.every((r) => r !== this.$route.name);
+    },
   },
   mounted() {
     document.addEventListener("scroll", this.scrollListener);
@@ -337,7 +226,7 @@ export default {
     },
     scrollListener() {
       resizeThrottler(this.handleScroll);
-    }
-  }
+    },
+  },
 };
 </script>
